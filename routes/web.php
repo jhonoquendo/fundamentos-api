@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'api'],function(){
+/*Route::group(['prefix' => 'api'],function(){
      //Route::apiResource('posts','Api\PostController');
-});
+});*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
