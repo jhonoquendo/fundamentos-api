@@ -37,6 +37,11 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+        /*return [
+            'id' => $post->id,
+            'post_name' => strtoupper($post->title),
+            'post_body' => strtoupper(substr($post->body,0,240).'...')
+        ];*/
         return $post;
     }
 
