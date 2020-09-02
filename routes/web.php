@@ -16,12 +16,13 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'PageController@index');
 
-/*Route::group(['prefix' => 'api'],function(){
+Route::group(['prefix' => 'api'],function(){
      //Route::apiResource('posts','Api\PostController');
-});*/
+});
 
-Auth::routes();
 
-Route::middleware('auth')->resource('posts','Backend\PostController');
+Route::middleware('auth')->resource('posts','Backend\PostController')->only('index');
 
 Route::get('/home', 'Backend\HomeController@index')->name('home');
+
+Auth::routes();

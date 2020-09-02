@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResource('posts','Api\PostController')->names([
     'index'     => 'api.posts.index',
-    'store'     => 'api.posts.store',
+    /*'store'     => 'api.posts.store',
     'update'    => 'api.posts.update',
     'show'      => 'api.posts.show',
-    'destroy'   => 'api.posts.destroy'
-]);
+    'destroy'   => 'api.posts.destroy'*/
+])->only('index');
