@@ -22,4 +22,6 @@ Route::get('/', 'PageController@index');
 
 Auth::routes();
 
+Route::middleware('auth')->resource('posts','Backend\PostController');
+
 Route::get('/home', 'Backend\HomeController@index')->name('home');
